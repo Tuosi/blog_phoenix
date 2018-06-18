@@ -9,6 +9,12 @@ defmodule BlogPhoenix.PostController do
   def index(conn, _params) do
     posts = Repo.all(Post)
     render(conn, "index.html", posts: posts)
+
+    # posts =
+    #   Post
+    #   |> Post.count_comments
+    #   |> Repo.all
+    # render(conn, "index.html", posts: posts)
   end
 
   def new(conn, _params) do
